@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+</body>
+<script>
+
+        
+
+        //converting array of objects
+       var arr = [{name: 'John', age: 20}, {name: 'Jane',age:21},{name:'mary',age:43}];
+       var arr2 = arr.map(function(obj){
+        return obj.name;
+        })
+        console.log(arr2);
+
+
+        
+        //generating an array of array
+        var arr3 = arr.map(function(obj){
+            return [obj.name,obj.age];
+            })
+            console.log(arr3);
+        //grouping array element
+        var arr4 = arr.reduce(function(acc,curr){
+            acc[curr.name] = curr.age;
+            return acc;
+            },{});
+            console.log(arr4);
+        //finding the index of first occurence
+        var arr5 = arr.findIndex(function(obj){
+            return obj.name === 'John';
+            })
+            console.log(arr5);
+        //array destruction
+        var arr6 = arr.map(function(obj){
+            return [obj.name,obj.age];
+            })
+            var [name,age] = arr6[0];
+            console.log(name,age);
+        //array flattening
+            var arr7 = [1,2,3,4,5,6,7]
+            var arr8 = arr7.reduce(function(acc,curr){
+            acc.push(curr);
+            return acc;
+            },[]);
+            console.log(arr8);
+</script>
+</html>
